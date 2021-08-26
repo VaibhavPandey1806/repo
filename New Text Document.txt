@@ -1,0 +1,7 @@
+git add .
+
+git commit -m "program"
+
+git push (-u origin master)
+
+git status
