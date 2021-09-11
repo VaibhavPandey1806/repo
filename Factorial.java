@@ -1,8 +1,3 @@
-// { Driver Code Starts
-// Initial Template for Java
-
-/*package whatever //do not write package name here */
-
 import java.io.*;
 import java.util.*;
 class Main {
@@ -11,28 +6,20 @@ class Main {
         //taking input using Scanner class
         Scanner sc = new Scanner(System.in);
 
-        //taking testcases
-        
-            
-            //creating an object of class Factorial
             Solution obj = new Solution();
             int N;
             
-            //taking N
+          
             N = sc.nextInt();
             
-            //calling factorial() method 
-            //of class Factorial
-            long a=obj.factorial(N);4
+          
+            long a=obj.factorial(N);
             
             System.out.println(a);
         
     }
 }
-// } Driver Code Ends
 
-
-// User function Template for Java
 
 class Solution {
 
