@@ -1,0 +1,116 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+import java.util.*;
+
+class GFG {
+	public static void main (String[] args) 
+	{
+	    Scanner obj =new Scanner(System.in);
+	    int inarr[]=new int[13];
+	    for(int i=0;i<13;i++)
+	    inarr[i]=obj.nextInt();
+	    char arr[]=new char[25];
+	    char brr[][]=new char[5][5];
+	    for(int i=0;i<25;i++)
+	    {
+	        arr[i]='O';
+	    }
+	    for(int i=0;i<13;i++)
+	    {
+	        arr[inarr[i]-1]='X';
+	    }
+	    for(int i=0;i<25;i++)
+	    {   
+	        
+	        if((i+1)%5==0)
+	        System.out.println(arr[i]);
+	        else
+	        System.out.print(arr[i]+",");
+	        
+	    }
+	    int outnum;
+	    int in=0;
+	    for(int i=0;i<5;i++)
+	    {
+	        for(int j=0;j<5;j++)
+	        {
+	            brr[i][j]=arr[in];
+	            in++;
+	        }
+	    }
+	    if(checkRow('X',brr)==true||checkColoumn('X',brr)==true||checkDiagnol('X',brr)==true)
+	    {
+	        outnum=1;
+	    }
+	    else
+	    if(checkRow('O',brr)==true||checkColoumn('O',brr)==true||checkDiagnol('O',brr)==true)
+	    {
+	        outnum=2;
+	    }
+	    else
+	    outnum=0;
+	    System.out.println(outnum);
+	    
+	    
+		
+	}
+	
+	public static boolean checkRow(char c,char b[][])
+	{
+	    int k=0;
+	    for(int i=0;i<5;i++)
+	    {
+	        for(int j=0;j<5;j++)
+	        {
+	            if(b[i][j]==c)
+	            k++;
+	        }
+	        if(k==5)
+	        return true;
+	        else
+	        k=0;
+	        
+	    }
+	    return false;
+	   
+	    
+	}
+	
+	public static boolean checkColoumn(char c,char b[][])
+	{   int k=0;
+	    for(int i=0;i<5;i++)
+	    {
+	        for(int j=0;j<5;j++)
+	        {
+	            if(b[j][i]==c)
+	            k++;
+	        }
+	        if(k==5)
+	        return true;
+	        k=0;
+	    }
+	    return false;
+	}
+	public static boolean checkDiagnol( char c,char b[][])
+	{
+	    int k=0;
+	    for(int i=0;i<5;i++)
+	    {
+	        if(b[i][i]!=c)
+	        k++;
+	    }
+	    if(k==5)
+	    return true;
+	    k=0;
+	    
+	    for(int i=4;i>=0;i--)
+	    {
+	        if(b[4-i][i]==c)
+	        k++;
+	    }
+	    if(k==5)
+	    return true;
+	    return false;
+	}
+}
